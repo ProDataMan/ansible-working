@@ -3,6 +3,7 @@
   gather_facts: no
   vars_files:
   - vault/credentials.yml
+  - vault/win_connect.yml
   tasks:
     - name: Install IIS
       win_feature:
