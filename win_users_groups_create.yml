@@ -1,5 +1,5 @@
 - name: Create Windows group and user
-  hosts: windows_host
+  hosts: webservers
   become: yes
   vars_files:
   - vault/credentials.yml
