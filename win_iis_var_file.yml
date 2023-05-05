@@ -1,0 +1,11 @@
+- name: Install IIS on Windows Server 2019
+  hosts: webservers
+  gather_facts: no
+  vars_files:
+  - vault/credentials.yml
+  tasks:
+    - name: Install IIS
+      win_feature:
+        name: Web-Server
+        state: present
+

@@ -1,0 +1,25 @@
+---
+webservers:
+  hosts:
+    webserver1:
+<<<<<<< HEAD
+      ansible_host: 54.193.105.241
+      ansible_user: Administrator
+      ansible_password: JustM300
+      ansible_connection: winrm
+      ansible_winrm_transport: ntlm
+=======
+      ansible_host: 54.176.168.85
+      ansible_user: "{{ windows_user }}"
+      ansible_password: "{{ windows_pwd }}"
+      ansible_connection: winrm
+      ansible_winrm_transport: ntlm
+      ansible_winrm_server_cert_validation: ignore
+    webserver2:
+      ansible_host: 13.52.179.175
+      ansible_user: "{{ windows_user }}"
+      ansible_password: "{{ windows_pwd }}"
+      ansible_connection: winrm
+      ansible_winrm_transport: ntlm
+>>>>>>> b04ccc1f24313be4cff8e7e2fca580d134ac5dbe
+      ansible_winrm_server_cert_validation: ignore
