@@ -1,12 +1,25 @@
-- name: Ensure user bob is present
-  ansible.windows.win_user:
-    name: bob
-    password: B0bP4ssw0rd
-    state: present
-    groups:
-      - Users
+---
+- name: Ensure IIS is installed and started 
+  hosts: webservers
+  become: yes 
+  become_method: runas
+  become_user: Administrator
+  vars:
+    ansible_connection: winrm
+    ansible_winrm_server_cert_validation: ignore
+    ansible_user: Administrator
+    ansible_password: JustM300
+    service_name: IIS Admin Service   
+  tasks:
+  - name: Ensure user bob is present
+    ansible.windows.win_user:
+      name: bob
+      password: B0bP4ssw0rd
+      state: present
+      groups:
+        - Users
 
-- name: Ensure user bob is absent
-  ansible.windows.win_user:
-    name: bob
-    state: absent
+  - name: Ensure user bob is absent
+    ansible.windows.win_user:
+      name: bob
+      state: absent
