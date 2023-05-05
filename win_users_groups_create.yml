@@ -1,6 +1,8 @@
 - name: Create Windows group and user
   hosts: webservers
   become: yes
+  become_method: runas
+  become_user: Administrator
   vars_files:
   - vault/credentials.yml
   - vault/win_connect.yml
