@@ -4,12 +4,9 @@
   become: yes 
   become_method: runas
   become_user: Administrator
-  vars:
-    ansible_connection: winrm
-    ansible_winrm_server_cert_validation: ignore
-    ansible_user: Administrator
-    ansible_password: JustM300
-    service_name: IIS Admin Service   
+  vars_files:
+  - vault/credentials.yml
+  - vault/win_connect.yml
   tasks:
   - name: Ensure user bob is present
     ansible.windows.win_user:
