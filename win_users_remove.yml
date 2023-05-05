@@ -1,0 +1,14 @@
+---
+- name: Ensure IIS is installed and started 
+  hosts: webservers
+  become: yes 
+  become_method: runas
+  become_user: Administrator
+  vars_files:
+  - vault/credentials.yml
+  - vault/win_connect.yml
+  tasks:
+  - name: Ensure user bob is absent
+    ansible.windows.win_user:
+      name: bob
+      state: absent
