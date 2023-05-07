@@ -15,8 +15,3 @@
       state: present
       groups:
         - Users
-
-  - name: Ensure user bob is absent
-    ansible.windows.win_user:
-      name: bob
-      state: absent
