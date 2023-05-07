@@ -1,7 +1,7 @@
 webservers:
   hosts:
     webserver1:
-      ansible_host: 54.193.105.241
+      ansible_host: 54.215.190.103
       ansible_connection: winrm
       ansible_winrm_transport: ntlm
       ansible_winrm_server_cert_validation: ignore
